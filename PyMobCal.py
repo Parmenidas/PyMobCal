@@ -1478,7 +1478,7 @@ immmin=0
 immmax=0
 ###
 
-InputData.icoord=2
+#InputData.icoord=2
 for iic in range(InputData.icoord):
     print("",file=fout)
     if InputData.icoord > 0:
