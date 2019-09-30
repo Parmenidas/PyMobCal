@@ -1,0 +1,106 @@
+!    -*- f90 -*-
+! Note: the context of this file is case sensitive.
+python module deriv__user__routines 
+    interface deriv_user_interface 
+        subroutine dljpot(x,y,z,pot,dpotx,dpoty,dpotz,dmax) 
+          intent(callback,hide) dljpot
+            double precision :: x
+            double precision :: y
+            double precision :: z
+            double precision,intent(out) :: pot
+            double precision,intent(out) :: dpotx
+            double precision,intent(out) :: dpoty
+            double precision,intent(out) :: dpotz
+            double precision,intent(out) :: dmax
+        end subroutine dljpot
+    end interface deriv_user_interface
+end python module deriv__user__routines  
+python module deriv ! in 
+    interface  ! in :deriv
+        subroutine deriv(w,dw,pot,dpotx,dpoty,dpotz,dmax) ! in :deriv:deriv.f
+            use deriv__user__routines
+            double precision dimension(6),intent(in) :: w
+            double precision dimension(6),intent(out) :: dw
+            double precision,intent(out) :: pot
+            double precision,intent(out) :: dpotx
+            double precision,intent(out) :: dpoty
+            double precision,intent(out) :: dpotz
+            double precision,intent(out) :: dmax
+            integer :: ip
+            integer :: it
+            integer :: iu1
+            integer :: iu2
+            integer :: iu3
+            integer :: iv
+            integer :: im2
+            integer :: im4
+            integer :: igs
+            double precision :: mu
+            double precision :: ro
+            double precision :: eo
+            double precision :: pi
+            double precision :: cang
+            double precision :: ro2
+            double precision :: dipol
+            double precision :: emax
+            double precision :: m1
+            double precision :: m2
+            double precision :: xe
+            double precision :: xk
+            double precision :: xn
+            double precision :: mconst
+            double precision :: correct
+            double precision :: romax
+            integer :: inatom
+            integer :: icoord
+            integer :: iic
+            double precision dimension(1000) :: pcharge
+            double precision dimension(1000) :: fx
+            double precision dimension(1000) :: fy
+            double precision dimension(1000) :: fz
+            double precision dimension(1000) :: ox
+            double precision dimension(1000) :: oy
+            double precision dimension(1000) :: oz
+            double precision dimension(1000) :: eolj
+            double precision dimension(1000) :: rolj
+            double precision dimension(1000) :: eox4
+            double precision dimension(1000) :: ro6lj
+            double precision dimension(1000) :: ro12lj
+            double precision dimension(1000) :: dro6
+            double precision dimension(1000) :: dro12
+            double precision dimension(1000) :: rhs
+            double precision dimension(1000) :: rhs2
+            double precision :: sw1
+            double precision :: sw2
+            double precision :: dtsf1
+            double precision :: dtsf2
+            double precision :: cmin
+            integer :: ifail
+            integer :: ifailc
+            integer :: inwr
+            double precision :: theta
+            double precision :: phi
+            double precision :: gamma
+            integer :: i1
+            integer :: i2
+            integer :: i3
+            integer :: i4
+            integer :: i5
+            integer :: i6
+            intent(callback) dljpot
+            external dljpot
+            common /printswitch/ ip,it,iu1,iu2,iu3,iv,im2,im4,igs
+            common /constants/ mu,ro,eo,pi,cang,ro2,dipol,emax,m1,m2,xe,xk,xn,mconst,correct,romax,inatom,icoord,iic
+            common /charge/ pcharge
+            common /coordinates/ fx,fy,fz,ox,oy,oz
+            common /ljparameters/ eolj,rolj,eox4,ro6lj,ro12lj,dro6,dro12
+            common /hsparameters/ rhs,rhs2
+            common /trajectory/ sw1,sw2,dtsf1,dtsf2,cmin,ifail,ifailc,inwr
+            common /angles/ theta,phi,gamma
+            common /xrandom/ i1,i2,i3,i4,i5,i6
+        end subroutine deriv
+    end interface 
+end python module deriv
+
+! This file was auto-generated with f2py (version:2).
+! See http://cens.ioc.ee/projects/f2py2e/
