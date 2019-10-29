@@ -15,3 +15,6 @@ Changes from the original version are reported in the source code with the keywo
 When possible I have replaced built-in function with standard python libraries. 
 Examples are the random number generator and the rotation routine.
 Examples, reference and more can be found at https://www.indiana.edu/~nano/software/
+* v0.1 - A brand new MobCal!
+* v0.2 - bug fixes
+* v0.3 - improvement in the trajectory method. The original algorithm has been replaced by Velocity Verlet. Several optimizations to make the code faster.
