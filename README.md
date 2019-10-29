@@ -18,3 +18,4 @@ Examples, reference and more can be found at https://www.indiana.edu/~nano/softw
 * v0.1 - A brand new MobCal!
 * v0.2 - bug fixes
 * v0.3 - improvement in the trajectory method. The original algorithm has been replaced by Velocity Verlet. Several optimizations to make the code faster.
+* v0.3c - This is the same code as version 0.3, but written in C. The trajectory method is 2X faster than the original fortran implementation, while the hard-sphere methods are comparable.
