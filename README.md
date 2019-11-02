@@ -15,6 +15,15 @@ Changes from the original version are reported in the source code with the keywo
 When possible I have replaced built-in function with standard python libraries. 
 Examples are the random number generator and the rotation routine.
 Examples, reference and more can be found at https://www.indiana.edu/~nano/software/
+
+# References
+When using this software, be sure to cite the following papers:
+
+* M. F. Mesleh, J. M. Hunter, A. A. Shvartsburg, G. C. Schatz, and M. F. Jarrold, Structural Information from Ion Mobility Measurements: Effects of the Long Range Potential, J. Phys. Chem. 1996, 100, 16082-16086; Erratum, J. Phys. Chem. A 1997, 101, 968.
+
+* A. A. Shvartsburg and M. F. Jarrold, An Exact Hard Spheres Scattering Model for the Mobilities of Polyatomic Ions, Chem. Phys. Lett. 1996, 261, 86-91.
+
+# Major Versions
 * v0.1 - A brand new MobCal!
 * v0.2 - bug fixes
 * v0.3 - improvement in the trajectory method. The original algorithm has been replaced by Velocity Verlet. Several optimizations to make the code faster.
