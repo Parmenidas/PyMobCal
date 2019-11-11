@@ -33,4 +33,4 @@ Note: Starting from version 3, a manual is available within each folder.
 * v0.3mpi - This is the version for clusters. Unless you have a huge molecule, it is probably overkill. It also requires a working MPI environment.
 
 # Developing new features
-The best way is to check both the manual and the developer's manual within each release. I recommend using python.
+The best way is to check both the manual and the developer's manual within each release. The python version of the code has been designed to be the easiest to modify and is well suited for testing and rapid development. Move to the C version only after testing is done.
