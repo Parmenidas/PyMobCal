@@ -1,20 +1,13 @@
 # PyMobCal
 Software for calculation of collisional cross sections.
 
-This software is a "translation" of the software MobCal that can be found at https://www.indiana.edu/~nano/software/. 
-That website contains a manual as well as examples. Remember to cite the original papers if you are using this software (see below). 
-The original software was written in Fortran 77. As this is a widely used software, 
-I thought to convert it into a more modern language such as Python or C. 
-At the current stage, the software should be 100% compatible with the original version in Fortran 77 (same input/output files, etc.). 
+This project is a rewritten Python and C implementation based on MobCal, whose original Fortran 77 code, manual, examples, and algorithm descriptions are available at https://www.indiana.edu/~nano/software/. If you use this software, please cite the original papers (see below). Because the original Fortran 77 implementation is widely used but is not optimized for newer machines, I decided to rewrite it in more modern languages while keeping the published algorithms and workflow intact. At this stage, the code is intended to be 100% compatible with the original Fortran 77 version, preserving the original input and output file formats.
 
-There are currently two versions of the code. One written in Python and one in C. See the manual within each version folder for details. Currently, this is still a development version, but the code should be relatively stable at this stage. In any case, always compare its results with the original mobcal and let me know how it goes.
-If you would like to share your files, it would be appreciated. They will be added to the samples and to a future test suite.
+Two versions are currently available—one in Python and one in C. See the manual inside each version's folder for details. Although this is still a development release, the code should be relatively stable. Please compare your results against the original MobCal and let me know how they match up. Sharing your input/output files would also be greatly appreciated, as they will help expand the sample set and build a future test suite.
+
 
 # Some more technical notes 
-I have decided to keep the code as close to the original as possible so that people with experience in the Fortran77 version 
-may understand it. Changes from the original version are reported in the source code with the keyword DIFF. 
-When possible I have replaced built-in function with standard libraries. 
-Examples are the random number generator and the rotation routine.
+I have decided to keep the code as close to the original as possible so people familiar with the Fortran 77 version can follow it easily. Changes from the original implementation are marked in the source code with the keyword DIFF. Where possible, I have replaced built-in functions with standard library equivalents, including the random number generator and the rotation routine.
 
 # References
 When using this software, be sure to cite the following papers:
